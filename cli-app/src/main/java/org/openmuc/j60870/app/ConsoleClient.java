@@ -18,7 +18,7 @@
  * along with j60870.  If not, see <http://www.gnu.org/licenses/>.
  *
  */
-package org.openmuc.j60870.app;
+package org.aemzayn.j60870.app;
 
 import java.io.IOException;
 import java.io.InterruptedIOException;
@@ -94,8 +94,7 @@ public final class ConsoleClient {
             log("Received connection closed signal. Reason: ");
             if (!e.getMessage().isEmpty()) {
                 log(e.getMessage());
-            }
-            else {
+            } else {
                 log("unknown");
             }
             actionProcessor.close();
@@ -117,48 +116,49 @@ public final class ConsoleClient {
         public void actionCalled(String actionKey) throws ActionException {
             try {
                 switch (actionKey) {
-                case INTERROGATION_ACTION_KEY:
-                    log("** Sending general interrogation command.");
-                    connection.interrogation(commonAddrParam.getValue(), CauseOfTransmission.ACTIVATION,
-                            new IeQualifierOfInterrogation(20));
-                    break;
-                case COUNTER_INTERROGATION_ACTION_KEY:
-                    log("Enter the freeze action: 0=read, 1=counter freeze without reset, 2=counter freeze with reset, 3=counter reset");
-                    int reference;
-                    try {
-                        reference = getReference();
-                    } catch (NumberFormatException e) {
-                        log("Input was not a integer between 0-3.");
+                    case INTERROGATION_ACTION_KEY:
+                        log("** Sending general interrogation command.");
+                        connection.interrogation(commonAddrParam.getValue(), CauseOfTransmission.ACTIVATION,
+                                new IeQualifierOfInterrogation(20));
                         break;
-                    }
-                    log("** Sending counter interrogation command.");
-                    connection.counterInterrogation(commonAddrParam.getValue(), CauseOfTransmission.ACTIVATION,
-                            new IeQualifierOfCounterInterrogation(5, reference));
-                    break;
-                case CLOCK_SYNC_ACTION_KEY:
-                    log("** Sending synchronize clocks command.");
-                    connection.synchronizeClocks(commonAddrParam.getValue(), new IeTime56(System.currentTimeMillis()));
-                    break;
-                case SINGLE_COMMAND_SELECT:
-                    log("** Sending single command select.");
-                    connection.singleCommand(commonAddrParam.getValue(), CauseOfTransmission.ACTIVATION, 5000,
-                            new IeSingleCommand(true, 0, true));
-                    break;
-                case SINGLE_COMMAND_EXECUTE:
-                    log("** Sending single command execute.");
-                    connection.singleCommand(commonAddrParam.getValue(), CauseOfTransmission.ACTIVATION, 5000,
-                            new IeSingleCommand(false, 0, false));
-                    break;
-                case SEND_STOPDT:
-                    log("** Sending STOPDT act.");
-                    connection.stopDataTransfer();
-                    break;
-                case SEND_STARTDT:
-                    log("** Sending STARTDT act.");
-                    connection.startDataTransfer();
-                    break;
-                default:
-                    break;
+                    case COUNTER_INTERROGATION_ACTION_KEY:
+                        log("Enter the freeze action: 0=read, 1=counter freeze without reset, 2=counter freeze with reset, 3=counter reset");
+                        int reference;
+                        try {
+                            reference = getReference();
+                        } catch (NumberFormatException e) {
+                            log("Input was not a integer between 0-3.");
+                            break;
+                        }
+                        log("** Sending counter interrogation command.");
+                        connection.counterInterrogation(commonAddrParam.getValue(), CauseOfTransmission.ACTIVATION,
+                                new IeQualifierOfCounterInterrogation(5, reference));
+                        break;
+                    case CLOCK_SYNC_ACTION_KEY:
+                        log("** Sending synchronize clocks command.");
+                        connection.synchronizeClocks(commonAddrParam.getValue(),
+                                new IeTime56(System.currentTimeMillis()));
+                        break;
+                    case SINGLE_COMMAND_SELECT:
+                        log("** Sending single command select.");
+                        connection.singleCommand(commonAddrParam.getValue(), CauseOfTransmission.ACTIVATION, 5000,
+                                new IeSingleCommand(true, 0, true));
+                        break;
+                    case SINGLE_COMMAND_EXECUTE:
+                        log("** Sending single command execute.");
+                        connection.singleCommand(commonAddrParam.getValue(), CauseOfTransmission.ACTIVATION, 5000,
+                                new IeSingleCommand(false, 0, false));
+                        break;
+                    case SEND_STOPDT:
+                        log("** Sending STOPDT act.");
+                        connection.stopDataTransfer();
+                        break;
+                    case SEND_STARTDT:
+                        log("** Sending STARTDT act.");
+                        connection.startDataTransfer();
+                        break;
+                    default:
+                        break;
                 }
             } catch (Exception e) {
                 throw new ActionException(e);
@@ -241,8 +241,7 @@ public final class ConsoleClient {
                     log("Starting data transfer timed out. Closing connection. Because of no more retries.");
                     connection.close();
                     return;
-                }
-                else {
+                } else {
                     log("Got Timeout.class Next try.");
                     ++i;
                     continue;

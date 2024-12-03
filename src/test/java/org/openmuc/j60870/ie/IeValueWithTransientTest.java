@@ -18,7 +18,7 @@
  * along with j60870.  If not, see <http://www.gnu.org/licenses/>.
  *
  */
-package org.openmuc.j60870.ie;
+package org.aemzayn.j60870.ie;
 
 import static org.junit.Assert.assertEquals;
 

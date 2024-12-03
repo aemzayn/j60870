@@ -18,7 +18,7 @@
  * along with j60870.  If not, see <http://www.gnu.org/licenses/>.
  *
  */
-package org.openmuc.j60870.internal.cli;
+package org.aemzayn.j60870.internal.cli;
 
 import java.util.ArrayList;
 import java.util.LinkedHashSet;
@@ -70,12 +70,10 @@ public class CliParser {
         int i = 0;
         if (commandLineParameterGroups.get(0).name.isEmpty()) {
             parameters = commandLineParameterGroups.get(0).parameters;
-        }
-        else {
+        } else {
             if (args.length == 0) {
                 throw new CliParseException("No parameters found.");
-            }
-            else if (HELP.equals(args[0])) {
+            } else if (HELP.equals(args[0])) {
                 System.out.println(getUsageString());
                 System.exit(0);
             }

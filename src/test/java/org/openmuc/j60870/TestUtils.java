@@ -18,7 +18,7 @@
  * along with j60870.  If not, see <http://www.gnu.org/licenses/>.
  *
  */
-package org.openmuc.j60870;
+package org.aemzayn.j60870;
 
 import java.io.IOException;
 import java.net.ServerSocket;

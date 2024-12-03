@@ -18,7 +18,7 @@
  * along with j60870.  If not, see <http://www.gnu.org/licenses/>.
  *
  */
-package org.openmuc.j60870.ie;
+package org.aemzayn.j60870.ie;
 
 import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertFalse;
@@ -163,7 +163,8 @@ public class TransmissionControlUsingStartStopTest {
     }
 
     /***
-     * 5.3.2.70 Description block 2. Expect Active Close on receipt of I- or S-frames.
+     * 5.3.2.70 Description block 2. Expect Active Close on receipt of I- or
+     * S-frames.
      */
     @Test
     public void receiveIorSFramesInStoppedConnectionState()
@@ -178,7 +179,8 @@ public class TransmissionControlUsingStartStopTest {
         assertFalse(newASduCalled);
         assertEquals(serverStoppedCause.getClass(), IOException.class);
         assertTrue(serverStoppedCause.getMessage().contains("message while STOPDT state"));
-        // controlled station (server) closes because it receives an ASdu while in stopped state, thus controller
+        // controlled station (server) closes because it receives an ASdu while in
+        // stopped state, thus controller
         // throws EOFException because remote closed
         Thread.sleep(1000);
         assertEquals(EOFException.class, clientStoppedCause.getClass());

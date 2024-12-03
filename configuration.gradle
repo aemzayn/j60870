@@ -3,7 +3,7 @@ project.ext {
 
   cfgVersion = "1.7.2"
   
-  cfgGroup = "org.openmuc"
+  cfgGroup = "org.aemzayn"
 
   cfgCopyDependencies = false
 

@@ -18,7 +18,7 @@
  * along with j60870.  If not, see <http://www.gnu.org/licenses/>.
  *
  */
-package org.openmuc.j60870.app;
+package org.aemzayn.j60870.app;
 
 import java.io.EOFException;
 import java.io.IOException;
@@ -87,55 +87,55 @@ public class SampleServer {
                 InformationObject informationObject = null;
                 try {
                     switch (aSdu.getTypeIdentification()) {
-                    // interrogation command
-                    case C_IC_NA_1:
-                        log("Got interrogation command (100). Will send scaled measured values.");
-                        connection.sendConfirmation(aSdu);
-                        // example GI response values
-                        connection.send(new ASdu(ASduType.M_ME_NB_1, true, CauseOfTransmission.INTERROGATED_BY_STATION,
-                                false, false, 0, aSdu.getCommonAddress(),
-                                new InformationObject(1, new InformationElement[][] {
-                                        { new IeScaledValue(-32768), new IeQuality(false, false, false, false, false) },
-                                        { new IeScaledValue(10), new IeQuality(false, false, false, false, false) },
-                                        { new IeScaledValue(-5),
-                                                new IeQuality(false, false, false, false, false) } })));
-                        connection.sendActivationTermination(aSdu);
-                        break;
-                    case C_SC_NA_1:
-                        informationObject = aSdu.getInformationObjects()[0];
-                        IeSingleCommand singleCommand = (IeSingleCommand) informationObject
-                                .getInformationElements()[0][0];
-
-                        if (informationObject.getInformationObjectAddress() != 5000) {
+                        // interrogation command
+                        case C_IC_NA_1:
+                            log("Got interrogation command (100). Will send scaled measured values.");
+                            connection.sendConfirmation(aSdu);
+                            // example GI response values
+                            connection.send(new ASdu(ASduType.M_ME_NB_1, true,
+                                    CauseOfTransmission.INTERROGATED_BY_STATION,
+                                    false, false, 0, aSdu.getCommonAddress(),
+                                    new InformationObject(1, new InformationElement[][] {
+                                            { new IeScaledValue(-32768),
+                                                    new IeQuality(false, false, false, false, false) },
+                                            { new IeScaledValue(10), new IeQuality(false, false, false, false, false) },
+                                            { new IeScaledValue(-5),
+                                                    new IeQuality(false, false, false, false, false) } })));
+                            connection.sendActivationTermination(aSdu);
                             break;
-                        }
-                        if (singleCommand.isSelect()) {
-                            log("Got single command (45) with select true. Select command.");
-                            selected = true;
-                            connection.sendConfirmation(aSdu);
-                        }
-                        else if (!singleCommand.isSelect() && selected) {
-                            log("Got single command (45) with select false. Execute selected command.");
-                            selected = false;
-                            connection.sendConfirmation(aSdu);
-                        }
-                        else {
-                            log("Got single command (45) with select false. But no command is selected, no execution.");
-                        }
-                        break;
-                    case C_CS_NA_1:
-                        IeTime56 ieTime56 = new IeTime56(System.currentTimeMillis());
-                        log("Got Clock synchronization command (103). Send current time: \n", ieTime56.toString());
-                        connection.synchronizeClocks(aSdu.getCommonAddress(), ieTime56);
-                        break;
-                    case C_SE_NB_1:
-                        log("Got Set point command, scaled value (49)");
-                        break;
-                    default:
-                        log("Got unknown request: ", aSdu.toString(),
-                                ". Send negative confirm with CoT UNKNOWN_TYPE_ID(44)\n");
-                        connection.sendConfirmation(aSdu, aSdu.getCommonAddress(), true,
-                                CauseOfTransmission.UNKNOWN_TYPE_ID);
+                        case C_SC_NA_1:
+                            informationObject = aSdu.getInformationObjects()[0];
+                            IeSingleCommand singleCommand = (IeSingleCommand) informationObject
+                                    .getInformationElements()[0][0];
+
+                            if (informationObject.getInformationObjectAddress() != 5000) {
+                                break;
+                            }
+                            if (singleCommand.isSelect()) {
+                                log("Got single command (45) with select true. Select command.");
+                                selected = true;
+                                connection.sendConfirmation(aSdu);
+                            } else if (!singleCommand.isSelect() && selected) {
+                                log("Got single command (45) with select false. Execute selected command.");
+                                selected = false;
+                                connection.sendConfirmation(aSdu);
+                            } else {
+                                log("Got single command (45) with select false. But no command is selected, no execution.");
+                            }
+                            break;
+                        case C_CS_NA_1:
+                            IeTime56 ieTime56 = new IeTime56(System.currentTimeMillis());
+                            log("Got Clock synchronization command (103). Send current time: \n", ieTime56.toString());
+                            connection.synchronizeClocks(aSdu.getCommonAddress(), ieTime56);
+                            break;
+                        case C_SE_NB_1:
+                            log("Got Set point command, scaled value (49)");
+                            break;
+                        default:
+                            log("Got unknown request: ", aSdu.toString(),
+                                    ". Send negative confirm with CoT UNKNOWN_TYPE_ID(44)\n");
+                            connection.sendConfirmation(aSdu, aSdu.getCommonAddress(), true,
+                                    CauseOfTransmission.UNKNOWN_TYPE_ID);
                     }
 
                 } catch (EOFException e) {

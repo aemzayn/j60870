@@ -18,7 +18,7 @@
  * along with j60870.  If not, see <http://www.gnu.org/licenses/>.
  *
  */
-package org.openmuc.j60870.internal.cli;
+package org.aemzayn.j60870.internal.cli;
 
 public abstract class CliParameter {
 
