@@ -29,25 +29,25 @@ import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
 
-import org.openmuc.j60870.ASdu;
-import org.openmuc.j60870.CauseOfTransmission;
-import org.openmuc.j60870.ClientConnectionBuilder;
-import org.openmuc.j60870.Connection;
-import org.openmuc.j60870.ConnectionEventListener;
-import org.openmuc.j60870.ie.IeQualifierOfCounterInterrogation;
-import org.openmuc.j60870.ie.IeQualifierOfInterrogation;
-import org.openmuc.j60870.ie.IeSingleCommand;
-import org.openmuc.j60870.ie.IeTime56;
-import org.openmuc.j60870.internal.cli.Action;
-import org.openmuc.j60870.internal.cli.ActionException;
-import org.openmuc.j60870.internal.cli.ActionListener;
-import org.openmuc.j60870.internal.cli.ActionProcessor;
-import org.openmuc.j60870.internal.cli.CliParameter;
-import org.openmuc.j60870.internal.cli.CliParameterBuilder;
-import org.openmuc.j60870.internal.cli.CliParseException;
-import org.openmuc.j60870.internal.cli.CliParser;
-import org.openmuc.j60870.internal.cli.IntCliParameter;
-import org.openmuc.j60870.internal.cli.StringCliParameter;
+import org.aemzayn.j60870.ASdu;
+import org.aemzayn.j60870.CauseOfTransmission;
+import org.aemzayn.j60870.ClientConnectionBuilder;
+import org.aemzayn.j60870.Connection;
+import org.aemzayn.j60870.ConnectionEventListener;
+import org.aemzayn.j60870.ie.IeQualifierOfCounterInterrogation;
+import org.aemzayn.j60870.ie.IeQualifierOfInterrogation;
+import org.aemzayn.j60870.ie.IeSingleCommand;
+import org.aemzayn.j60870.ie.IeTime56;
+import org.aemzayn.j60870.internal.cli.Action;
+import org.aemzayn.j60870.internal.cli.ActionException;
+import org.aemzayn.j60870.internal.cli.ActionListener;
+import org.aemzayn.j60870.internal.cli.ActionProcessor;
+import org.aemzayn.j60870.internal.cli.CliParameter;
+import org.aemzayn.j60870.internal.cli.CliParameterBuilder;
+import org.aemzayn.j60870.internal.cli.CliParseException;
+import org.aemzayn.j60870.internal.cli.CliParser;
+import org.aemzayn.j60870.internal.cli.IntCliParameter;
+import org.aemzayn.j60870.internal.cli.StringCliParameter;
 
 public final class ConsoleClient {
 

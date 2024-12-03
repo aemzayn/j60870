@@ -24,7 +24,7 @@ import java.io.IOException;
 import java.net.ServerSocket;
 import java.util.Random;
 
-import org.openmuc.j60870.internal.HexUtils;
+import org.aemzayn.j60870.internal.HexUtils;
 
 public class TestUtils {
     private static final int MIN_PORT_NUMBER = 2024;

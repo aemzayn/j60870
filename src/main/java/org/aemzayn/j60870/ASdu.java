@@ -23,9 +23,9 @@ package org.aemzayn.j60870;
 import java.io.IOException;
 import java.text.MessageFormat;
 
-import org.openmuc.j60870.ie.InformationObject;
-import org.openmuc.j60870.internal.ExtendedDataInputStream;
-import org.openmuc.j60870.internal.HexUtils;
+import org.aemzayn.j60870.ie.InformationObject;
+import org.aemzayn.j60870.internal.ExtendedDataInputStream;
+import org.aemzayn.j60870.internal.HexUtils;
 
 /**
  * The application service data unit (ASDU). The ASDU is the payload of the
@@ -35,13 +35,13 @@ import org.openmuc.j60870.internal.HexUtils;
  * Objects. The Data Unit Identifier contains:
  *
  * <ul>
- * <li>{@link org.openmuc.j60870.ASduType} (1 byte)</li>
+ * <li>{@link org.aemzayn.j60870.ASduType} (1 byte)</li>
  * <li>Variable Structure Qualifier (1 byte) - specifies how many Information
  * Objects and Information Element sets are
  * part of the ASDU.</li>
  * <li>Cause of Transmission (COT, 1 or 2 bytes) - The first byte codes the
  * actual
- * {@link org.openmuc.j60870.CauseOfTransmission}, a bit indicating whether the
+ * {@link org.aemzayn.j60870.CauseOfTransmission}, a bit indicating whether the
  * message was sent for test purposes only
  * and a bit indicating whether a confirmation message is positive or negative.
  * The optional second byte of the Cause of

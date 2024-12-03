@@ -34,17 +34,17 @@ import java.util.concurrent.CountDownLatch;
 import org.junit.After;
 import org.junit.Before;
 import org.junit.Test;
-import org.openmuc.j60870.ASdu;
-import org.openmuc.j60870.ASduType;
-import org.openmuc.j60870.CauseOfTransmission;
-import org.openmuc.j60870.ClientConnectionBuilder;
-import org.openmuc.j60870.Connection;
-import org.openmuc.j60870.ConnectionEventListener;
-import org.openmuc.j60870.ReservedASduTypeDecoder;
-import org.openmuc.j60870.Server;
-import org.openmuc.j60870.ServerEventListener;
-import org.openmuc.j60870.TestUtils;
-import org.openmuc.j60870.internal.ExtendedDataInputStream;
+import org.aemzayn.j60870.ASdu;
+import org.aemzayn.j60870.ASduType;
+import org.aemzayn.j60870.CauseOfTransmission;
+import org.aemzayn.j60870.ClientConnectionBuilder;
+import org.aemzayn.j60870.Connection;
+import org.aemzayn.j60870.ConnectionEventListener;
+import org.aemzayn.j60870.ReservedASduTypeDecoder;
+import org.aemzayn.j60870.Server;
+import org.aemzayn.j60870.ServerEventListener;
+import org.aemzayn.j60870.TestUtils;
+import org.aemzayn.j60870.internal.ExtendedDataInputStream;
 
 public class TransmissionControlUsingStartStopTest {
 

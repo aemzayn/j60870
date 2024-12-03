@@ -25,8 +25,8 @@ import java.io.IOException;
 import java.net.Socket;
 import java.text.MessageFormat;
 
-import org.openmuc.j60870.internal.ExtendedDataInputStream;
-import org.openmuc.j60870.internal.StartBytesSimpleReader;
+import org.aemzayn.j60870.internal.ExtendedDataInputStream;
+import org.aemzayn.j60870.internal.StartBytesSimpleReader;
 
 class APdu {
 

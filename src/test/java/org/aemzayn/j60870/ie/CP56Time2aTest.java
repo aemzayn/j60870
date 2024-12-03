@@ -22,7 +22,7 @@ package org.aemzayn.j60870.ie;
 
 import static org.junit.Assert.assertArrayEquals;
 import static org.junit.Assert.assertEquals;
-import static org.openmuc.j60870.internal.HexUtils.hexToBytes;
+import static org.aemzayn.j60870.internal.HexUtils.hexToBytes;
 
 import java.util.TimeZone;
 

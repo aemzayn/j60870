@@ -22,8 +22,8 @@ package org.aemzayn.j60870;
 
 import java.util.List;
 
-import org.openmuc.j60870.ie.InformationObject;
-import org.openmuc.j60870.internal.ExtendedDataInputStream;
+import org.aemzayn.j60870.ie.InformationObject;
+import org.aemzayn.j60870.internal.ExtendedDataInputStream;
 
 public interface ReservedASduTypeDecoder {
     public List<ASduType> getSupportedTypes();

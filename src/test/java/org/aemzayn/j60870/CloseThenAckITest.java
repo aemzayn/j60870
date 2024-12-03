@@ -20,10 +20,10 @@
  */
 package org.aemzayn.j60870;
 
-import static org.openmuc.j60870.TestUtils.STARTDT_ACT_BYTES;
-import static org.openmuc.j60870.TestUtils.STARTDT_CON_BYTES;
-import static org.openmuc.j60870.TestUtils.STOPDT_ACT_BYTES;
-import static org.openmuc.j60870.TestUtils.STOPDT_CON_BYTES;
+import static org.aemzayn.j60870.TestUtils.STARTDT_ACT_BYTES;
+import static org.aemzayn.j60870.TestUtils.STARTDT_CON_BYTES;
+import static org.aemzayn.j60870.TestUtils.STOPDT_ACT_BYTES;
+import static org.aemzayn.j60870.TestUtils.STOPDT_CON_BYTES;
 
 import java.io.IOException;
 import java.io.InputStream;
@@ -32,12 +32,12 @@ import java.net.Socket;
 
 import org.junit.Assert;
 import org.junit.Test;
-import org.openmuc.j60870.ie.IeNormalizedValue;
-import org.openmuc.j60870.ie.IeQuality;
-import org.openmuc.j60870.ie.InformationElement;
-import org.openmuc.j60870.ie.InformationObject;
-import org.openmuc.j60870.internal.ByteStreamHelper;
-import org.openmuc.j60870.internal.HexUtils;
+import org.aemzayn.j60870.ie.IeNormalizedValue;
+import org.aemzayn.j60870.ie.IeQuality;
+import org.aemzayn.j60870.ie.InformationElement;
+import org.aemzayn.j60870.ie.InformationObject;
+import org.aemzayn.j60870.internal.ByteStreamHelper;
+import org.aemzayn.j60870.internal.HexUtils;
 
 public class CloseThenAckITest {
 

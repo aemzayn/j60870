@@ -27,7 +27,7 @@ import java.util.EnumSet;
 import java.util.Iterator;
 import java.util.Set;
 
-import org.openmuc.j60870.internal.ExtendedDataInputStream;
+import org.aemzayn.j60870.internal.ExtendedDataInputStream;
 
 /**
  * Represents a binary counter reading (BCR) information element.

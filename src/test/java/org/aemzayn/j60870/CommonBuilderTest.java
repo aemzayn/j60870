@@ -23,7 +23,7 @@ package org.aemzayn.j60870;
 import org.junit.Before;
 import org.junit.Test;
 import org.junit.runner.RunWith;
-import org.openmuc.j60870.Server.Builder;
+import org.aemzayn.j60870.Server.Builder;
 
 import junitparams.JUnitParamsRunner;
 

@@ -29,8 +29,8 @@ import java.util.Arrays;
 
 import org.junit.Assert;
 import org.junit.Test;
-import org.openmuc.j60870.internal.ByteStreamHelper;
-import org.openmuc.j60870.internal.HexUtils;
+import org.aemzayn.j60870.internal.ByteStreamHelper;
+import org.aemzayn.j60870.internal.HexUtils;
 
 public class WrongTypeIdITest {
 

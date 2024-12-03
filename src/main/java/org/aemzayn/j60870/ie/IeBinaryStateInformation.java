@@ -23,7 +23,7 @@ package org.aemzayn.j60870.ie;
 import java.io.DataInputStream;
 import java.io.IOException;
 
-import org.openmuc.j60870.internal.HexUtils;
+import org.aemzayn.j60870.internal.HexUtils;
 
 /**
  * Represents a binary state information (BSI) information element.

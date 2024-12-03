@@ -31,8 +31,8 @@ import java.util.EnumSet;
 
 import org.junit.Test;
 import org.junit.runner.RunWith;
-import org.openmuc.j60870.ie.IeBinaryCounterReading.Flag;
-import org.openmuc.j60870.internal.ExtendedDataInputStream;
+import org.aemzayn.j60870.ie.IeBinaryCounterReading.Flag;
+import org.aemzayn.j60870.internal.ExtendedDataInputStream;
 
 import junitparams.JUnitParamsRunner;
 import junitparams.Parameters;

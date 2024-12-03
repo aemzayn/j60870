@@ -29,26 +29,26 @@ import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
 
-import org.openmuc.j60870.ASdu;
-import org.openmuc.j60870.ASduType;
-import org.openmuc.j60870.CauseOfTransmission;
-import org.openmuc.j60870.Connection;
-import org.openmuc.j60870.ConnectionEventListener;
-import org.openmuc.j60870.Server;
-import org.openmuc.j60870.Server.Builder;
-import org.openmuc.j60870.ServerEventListener;
-import org.openmuc.j60870.ie.IeQuality;
-import org.openmuc.j60870.ie.IeScaledValue;
-import org.openmuc.j60870.ie.IeSingleCommand;
-import org.openmuc.j60870.ie.IeTime56;
-import org.openmuc.j60870.ie.InformationElement;
-import org.openmuc.j60870.ie.InformationObject;
-import org.openmuc.j60870.internal.cli.CliParameter;
-import org.openmuc.j60870.internal.cli.CliParameterBuilder;
-import org.openmuc.j60870.internal.cli.CliParseException;
-import org.openmuc.j60870.internal.cli.CliParser;
-import org.openmuc.j60870.internal.cli.IntCliParameter;
-import org.openmuc.j60870.internal.cli.StringCliParameter;
+import org.aemzayn.j60870.ASdu;
+import org.aemzayn.j60870.ASduType;
+import org.aemzayn.j60870.CauseOfTransmission;
+import org.aemzayn.j60870.Connection;
+import org.aemzayn.j60870.ConnectionEventListener;
+import org.aemzayn.j60870.Server;
+import org.aemzayn.j60870.Server.Builder;
+import org.aemzayn.j60870.ServerEventListener;
+import org.aemzayn.j60870.ie.IeQuality;
+import org.aemzayn.j60870.ie.IeScaledValue;
+import org.aemzayn.j60870.ie.IeSingleCommand;
+import org.aemzayn.j60870.ie.IeTime56;
+import org.aemzayn.j60870.ie.InformationElement;
+import org.aemzayn.j60870.ie.InformationObject;
+import org.aemzayn.j60870.internal.cli.CliParameter;
+import org.aemzayn.j60870.internal.cli.CliParameterBuilder;
+import org.aemzayn.j60870.internal.cli.CliParseException;
+import org.aemzayn.j60870.internal.cli.CliParser;
+import org.aemzayn.j60870.internal.cli.IntCliParameter;
+import org.aemzayn.j60870.internal.cli.StringCliParameter;
 
 public class SampleServer {
 
